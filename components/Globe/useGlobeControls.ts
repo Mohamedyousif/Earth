@@ -3,10 +3,9 @@ import { GLOBE_CONFIG } from '@/lib/constants/globe'
 
 interface UseGlobeControlsOptions {
   globeRef: React.RefObject<any>
-  containerRef: React.RefObject<HTMLDivElement>
 }
 
-export function useGlobeControls({ globeRef, containerRef }: UseGlobeControlsOptions): void {
+export function useGlobeControls({ globeRef }: UseGlobeControlsOptions): void {
   // Basic rotation, damping, zoom constraints
   useEffect(() => {
     if (!globeRef.current) return
@@ -47,18 +46,4 @@ export function useGlobeControls({ globeRef, containerRef }: UseGlobeControlsOpt
     }
   }, [globeRef])
 
-  // Resize observer — keep globe filling container
-  useEffect(() => {
-    if (!globeRef.current || !containerRef.current) return
-
-    const observer = new ResizeObserver(() => {
-      if (!containerRef.current || !globeRef.current) return
-      const { width, height } = containerRef.current.getBoundingClientRect()
-      globeRef.current.width(width)
-      globeRef.current.height(height)
-    })
-
-    observer.observe(containerRef.current)
-    return () => observer.disconnect()
-  }, [globeRef, containerRef])
 }

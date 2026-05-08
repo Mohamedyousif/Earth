@@ -12,12 +12,11 @@ interface GlobeSceneProps {
 
 export default function GlobeScene({ onReady, onError }: GlobeSceneProps) {
   const globeRef = useRef<any>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
 
-  useGlobeControls({ globeRef, containerRef })
+  useGlobeControls({ globeRef })
 
   return (
-    <div ref={containerRef} className="w-full h-full">
+    <div className="w-full h-full">
       <Globe
         ref={globeRef}
         globeImageUrl={GLOBE_CONFIG.textures.day}
