@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --earth-glow: rgba(100, 160, 255, 0.15);
+  --star-bg: #000005;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--star-bg);
+  overflow: hidden;
+}

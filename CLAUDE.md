@@ -13,4 +13,5 @@ This is a website that displays Planet Earth and information about countries. Th
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read the current plan
+at `specs/001-globe-render/plan.md`.
 <!-- SPECKIT END -->
